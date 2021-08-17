@@ -579,9 +579,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 29.75
-    #define DEFAULT_Ki 2.59
-    #define DEFAULT_Kd 86.12
+    #define DEFAULT_Kp 23.36
+    #define DEFAULT_Ki 1.97
+    #define DEFAULT_Kd 69.35
   #endif
 #endif // PIDTEMP
 
@@ -899,14 +899,15 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 99.788108106, 82.2561692126909, 4000, 94.76 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 99.78,82.25,3975.346, 88.40}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 }
+//#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 } // fecha 02/08/2021
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 2, 25 } // fecha 02/08/2021
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1717,7 +1718,8 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+//#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) } // 02/08/2021
+#define HOMING_FEEDRATE_MM_M {1500,1500,120} 
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
